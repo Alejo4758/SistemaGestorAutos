@@ -1,5 +1,5 @@
 <?php
-    include_once "Conector/BaseDatos.php";
+    include_once __DIR__ . "/Conector/BaseDatos.php";
     Class Auto {
         private $patente;
         private $marca;

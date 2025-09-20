@@ -1,5 +1,5 @@
 <?php
-    include_once "../Modelo/Auto.php";
+    include_once __DIR__ . "/../Modelo/Auto.php";
 
     class ControladorAuto {
         // Métodos

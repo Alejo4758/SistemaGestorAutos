@@ -1,5 +1,5 @@
 <?php
-    include_once "Conector/BaseDatos.php";
+    include_once __DIR__ . "/Conector/BaseDatos.php";
     class Persona {
         private $nroDni;
         private $apellido;

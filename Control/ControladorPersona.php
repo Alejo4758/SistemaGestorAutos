@@ -1,5 +1,5 @@
 <?php
-    include_once "../Modelo/Persona.php";
+    include_once __DIR__ . "/../Modelo/Persona.php";
 
     class ControladorPersona {
         // Métodos

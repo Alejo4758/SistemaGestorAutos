@@ -6,17 +6,26 @@
 </head>
 <body>
     <div class="container my-4">
-        <h1 class="mb-4 text-center">Búsqueda de Auto</h1>
-        <form action="Acciones/AccionBuscarAuto.php" method="post" class="needs-validation" novalidate>
-            <div class="mb-3">
-                <label for="patente" class="form-label">Patente</label>
-                <input type="text" id="patente" name="patente" class="form-control" placeholder="Ingrese la patente" required>
-                <div class="invalid-feedback">
-                    Por favor ingrese una patente válida
+        <h1 class="mb-4 text-center">Buscar Auto</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form action="../acciones/accionBuscarAuto.php" method="post" class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="patente" class="form-label">Patente</label>
+                                <input type="text" name="patente" id="patente" class="form-control" placeholder="Ej: ABC123" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese una patente válida
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Buscar</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Buscar</button>
-        </form>
+        </div>
     </div>
+    <script src="JS/ValidacionBuscarAuto.js"></script>
 </body>
 </html>

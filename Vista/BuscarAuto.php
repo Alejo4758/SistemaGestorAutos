@@ -11,13 +11,11 @@
             <div class="col-md-6">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <form action="../acciones/accionBuscarAuto.php" method="post" class="needs-validation" novalidate>
+                        <form action="Acciones/AccionBuscarAuto.php" method="post" class="needs-validation" novalidate>
                             <div class="mb-3">
                                 <label for="patente" class="form-label">Patente</label>
-                                <input type="text" name="patente" id="patente" class="form-control" placeholder="Ej: ABC123" required>
-                                <div class="invalid-feedback">
-                                    Por favor ingrese una patente válida
-                                </div>
+                                <input type="text" name="patente" id="patente" class="form-control" placeholder="ABC 123" required pattern="[A-Z]{3}\s[0-9]{3}">
+                                <div class="invalid-feedback">Por favor, ingrese una patente válida</div>
                             </div>
                             <button type="submit" class="btn btn-primary w-100">Buscar</button>
                         </form>

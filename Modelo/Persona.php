@@ -206,12 +206,12 @@
                 if ($objBD -> Ejecutar ($consulta) !== -1) {
                     while ($fila = $objBD -> Registro ()) {
                         $objPersona = new Persona (
-                            $fila["nroDni"],
-                            $fila["apellido"],
-                            $fila["nombre"],
+                            $fila["NroDni"],
+                            $fila["Apellido"],
+                            $fila["Nombre"],
                             $fila["fechaNac"],
-                            $fila["telefono"],
-                            $fila["domicilio"]
+                            $fila["Telefono"],
+                            $fila["Domicilio"]
                         );
                         array_push ($coleccionPersonas, $objPersona);
                     }

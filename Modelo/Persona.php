@@ -167,7 +167,7 @@
             $personaEncontrada = null;
             $objBD = new BaseDatos ();
             if ($objBD -> Iniciar ()) {
-                $consulta = "SELECT * FROM Persona WHERE nroDni = {$numeroDoc}";
+                $consulta = "SELECT * FROM Persona WHERE nroDni = '{$numeroDoc}'";
                 if ($objBD -> Ejecutar ($consulta) !== -1) {
                     if ($fila = $objBD -> Registro ()) {
                         $personaEncontrada = new Persona (

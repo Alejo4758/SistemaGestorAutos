@@ -24,6 +24,6 @@
             </div>
         </div>
     </div>
-    <script src="JS/ValidacionBuscarAuto.js"></script>
+    <script src="JS/Validacion.js"></script>
 </body>
 </html>

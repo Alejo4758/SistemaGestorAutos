@@ -14,7 +14,7 @@
                         <form action="Acciones/AccionBuscarPersona.php" method="post" class="needs-validation" novalidate>
                             <div class="mb-3">
                                 <label for="patente" class="form-label">Número de documento</label>
-                                <input type="text" name="dni" id="dni" class="form-control" placeholder="12345678" required pattern="^\d{7,8}$">
+                                <input type="text" name="dni" id="dni" class="form-control" placeholder="12345678" required pattern="^\d{8}$">
                                 <div class="invalid-feedback">Por favor, ingrese un DNI válido</div>
                             </div>
                             <button type="submit" class="btn btn-primary w-100">Buscar</button>
@@ -24,6 +24,6 @@
             </div>
         </div>
     </div>
-    <script src="JS/ValidacionBuscarPersona.js"></script>
+    <script src="JS/Validacion.js"></script>
 </body>
 </html>

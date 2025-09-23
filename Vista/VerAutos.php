@@ -11,7 +11,9 @@
     <?php
         include_once __DIR__ . "/../includes/load.php";
 
-        $listaAutos = Auto :: listar ();
+        $controlAuto = new ControladorAuto ();
+        $controlPersona = new ControladorPersona ();
+        $listaAutos = $controlAuto -> listar ();
         if (count ($listaAutos) === 0) {
             echo '<div class="alert alert-warning text-center">No se han ingresado autos</div>';
         }
@@ -19,7 +21,7 @@
             echo '<div class="row row-cols-1 row-cols-md-2 g-4">';
             foreach ($listaAutos as $auto) {
                 $dniTitular = $auto -> getDniDuenio ();
-                $persona = Persona :: seleccionar ($dniTitular);
+                $persona = $controlPersona -> buscar ($dniTitular);
     ?>
     <div class="col">
         <div class="card shadow-sm h-100">

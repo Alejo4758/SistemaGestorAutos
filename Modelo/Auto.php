@@ -142,18 +142,18 @@
             $autoEncontrado = null;
             $objBD = new BaseDatos ();
             if ($objBD -> Iniciar ()) {
-                $consulta = "SELECT * FROM Auto WHERE patente = {$patenteAuto}";
+                $consulta = "SELECT * FROM Auto WHERE patente = '{$patenteAuto}'";
                 if ($objBD -> Ejecutar ($consulta) !== -1) {
                     if ($fila = $objBD -> Registro ()) {
-                        $persona = Persona :: seleccionar($fila["dniDuenio"]);
+                        $persona = Persona :: seleccionar($fila["DniDuenio"]);
                         if ($persona === null) {
                             throw new Exception ("Dueño no encontrado con número de documento: " . $fila["dniDuenio"]);
                         }
                         $autoEncontrado = new Auto (
-                            $fila["patente"],
-                            $fila["marca"],
-                            $fila["modelo"],
-                            $fila["dniDuenio"],
+                            $fila["Patente"],
+                            $fila["Marca"],
+                            $fila["Modelo"],
+                            $fila["DniDuenio"],
                         );
                     }
                 }

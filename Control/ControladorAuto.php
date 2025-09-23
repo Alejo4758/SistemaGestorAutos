@@ -7,7 +7,7 @@
         /**
          * Permite buscar un auto por su patente
          * @param String $patenteAuto
-         * @return boolean
+         * @return boolean||Auto
          */
         public function buscar ($patente) {
             return Auto :: seleccionar ($patente);

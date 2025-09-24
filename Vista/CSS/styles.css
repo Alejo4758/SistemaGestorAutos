@@ -49,3 +49,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
   -webkit-appearance: none;
 }
+
+p {
+  font-size: 1.1em;
+}

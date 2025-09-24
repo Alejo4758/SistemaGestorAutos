@@ -2,11 +2,12 @@
 <html lang="es">
 <head>
     <?php include_once __DIR__ . "/../includes/head.php" ?>
+    <link rel="stylesheet" href="CSS/styles.css">
     <title>Ver Personas</title>
 </head>
-<body>
+<body class="bg-dark text-light">
     <div class="container my-4">
-    <h1 class="mb-4 text-center">Lista de Personas</h1>
+    <h1 class="mb-4 text-center titulo-personalizado">Lista de Personas</h1>
 
     <?php
         include_once __DIR__ . "/../includes/load.php";
@@ -21,7 +22,7 @@
             foreach ($listaPersonas as $persona) {
     ?>
     <div class="col">
-        <div class="card shadow-sm h-100">
+        <div class="card card-personalizada shadow-sm h-100">
             <div class="card-body">
                 <h5 class="card-title"><?php echo $persona -> getApellido () . ' ' . $persona -> getNombre (); ?> </h5>
                 <p class="card-text">

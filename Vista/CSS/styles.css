@@ -53,3 +53,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 p {
   font-size: 1.1em;
 }
+
+.table-dark {
+  --bs-table-bg: #2c3448;
+  --bs-table-striped-bg: #343c52;
+  --bs-table-striped-color: #e2e2e2;
+  --bs-table-hover-bg: #3b425a;
+}

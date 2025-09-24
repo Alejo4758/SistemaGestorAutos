@@ -3,6 +3,8 @@
 <head>
     <?php include_once __DIR__ . "/../includes/head.php" ?>
     <link rel="stylesheet" href="CSS/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver Personas</title>
 </head>
 <body class="bg-dark text-light">

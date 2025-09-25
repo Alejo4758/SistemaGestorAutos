@@ -97,15 +97,19 @@
                                  modelo = '{$this -> getModelo ()}',
                                  dniDuenio = '{$this -> getDniDuenio ()}'
                              WHERE patente = '{$this -> getPatente ()}'";
-                if ($objDB -> Ejecutar ($consulta) !== 1) {
+                $filas = $objDB -> Ejecutar ($consulta);
+                if ($filas > 0) {
                     $respuesta = true;
+                }
+                else if ($filas === 0) {
+                    throw new Exception ("No se actualizó ningún registro");
                 }
                 else {
                     throw new Exception ($objDB -> getError ());
                 }
             }
             else {
-                throw new Exception ($objDB -> getError ());
+                throw new Exception($objDB -> getError ());
             }
             return $respuesta;
         }

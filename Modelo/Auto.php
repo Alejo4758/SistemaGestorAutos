@@ -120,7 +120,7 @@
             if ($objBD -> Iniciar ()) {
                 $consulta = "INSERT INTO Auto (patente, marca, modelo, dniDuenio) 
                              VALUES ('{$this -> getPatente ()}', '{$this -> getMarca ()}',
-                                     '{$this -> getModelo ()}', '{$this -> getDniDuenio ()}'";
+                                     '{$this -> getModelo ()}', '{$this -> getDniDuenio ()}')";
                 if ($objBD -> Ejecutar ($consulta)) {
                     $respuesta = true;
                 }

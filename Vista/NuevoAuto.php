@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/styles.css">
-    <title>Nueva Auto</title>
+    <title>Nuevo Auto</title>
 </head>
 <body>
     <div class="container my-4">
@@ -16,23 +16,23 @@
                     <div class="card-body">
                         <form action="Acciones/AccionNuevoAuto.php" method="post" class="needs-validation" novalidate>
                             <div class="mb-3">
-                                <label for="nroDni" class="form-label">Patente</label>
-                                <input type="text" id="nroDni" name="nroDni" class="form-control" placeholder="FDE 345" pattern="[A-Z]{3}\s[0-9]{3}" required>
+                                <label for="patente" class="form-label">Patente</label>
+                                <input type="text" id="patente" name="patente" class="form-control" placeholder="FDE 345" pattern="[A-Z]{3}\s[0-9]{3}" required>
                                 <div class="invalid-feedback">Ingrese una patente válida</div>
                             </div>
                             <div class="mb-3">
-                                <label for="apellido" class="form-label">Marca</label>
-                                <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Fiat uno" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+(?:\s[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+)*$" required>
+                                <label for="marca" class="form-label">Marca</label>
+                                <input type="text" id="marca" name="marca" class="form-control" placeholder="Fiat uno" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+(?:\s[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+)*$" required>
                                 <div class="invalid-feedback">Ingrese una marca válida</div>
                             </div>
                             <div class="mb-3">
-                                <label for="nombre" class="form-label">Modelo</label>
-                                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="2004" pattern="^(19|20)\d{2}$" required>
+                                <label for="modelo" class="form-label">Modelo</label>
+                                <input type="text" id="modelo" name="modelo" class="form-control" placeholder="2004" pattern="^(19|20)\d{2}$" required>
                                 <div class="invalid-feedback">Ingrese un modelo válido</div>
                             </div>
                             <div class="mb-3">
-                                <label for="fechaNac" class="form-label">DNI del dueño</label>
-                                <input type="text" id="fechaNac" name="fechaNac" class="form-control" placeholder="12345678" required pattern="^\d{8}$">
+                                <label for="dniDuenio" class="form-label">DNI del dueño</label>
+                                <input type="text" id="dniDuenio" name="dniDuenio" class="form-control" placeholder="12345678" required pattern="^\d{8}$">
                                 <div class="invalid-feedback">Ingrese un DNI válido de 8 dígitos</div>
                             </div>
                             <button type="submit" class="btn btn-personalizado w-100">Ingresar</button>

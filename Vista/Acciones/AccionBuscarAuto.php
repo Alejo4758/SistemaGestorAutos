@@ -19,36 +19,52 @@
             $controlAuto = new ControladorAuto ();
             $auto = $controlAuto -> buscar ($datos["patente"]);
 
-            if (!$auto) {
-                echo '<div class="alert alert-warning text-center">No hay un auto con esa patente</div>';
-            }
-            else {
+            if (!$auto) { 
         ?>
-        <div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-dark table-striped table-bordered mb-0">
-                        <thead>
-                            <tr>
-                                <th>Patente</th>
-                                <th>Marca</th>
-                                <th>Modelo</th>
-                                <th>DNI del dueño</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><?php echo htmlspecialchars ($auto -> getPatente ()); ?></td>
-                                <td><?php echo htmlspecialchars($auto -> getMarca ()); ?></td>
-                                <td><?php echo htmlspecialchars($auto -> getModelo ()); ?></td>
-                                <td><?php echo htmlspecialchars($auto -> getDniDuenio ()); ?></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card card-personalizada shadow-sm">
+                            <div class="card-body text-center">
+                                <p class="text-danger fw-bold mb-3">No hay un auto con esa patente</p>
+                                <a href="../BuscarAuto.php" class="btn btn-personalizado w-100">Volver</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <?php } ?>
+        <?php
+            }
+            else { 
+        ?>
+                <div class="card card-personalizada shadow-sm">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-dark table-striped table-bordered mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Patente</th>
+                                        <th>Marca</th>
+                                        <th>Modelo</th>
+                                        <th>DNI del dueño</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><?= htmlspecialchars($auto->getPatente()); ?></td>
+                                        <td><?= htmlspecialchars($auto->getMarca()); ?></td>
+                                        <td><?= htmlspecialchars($auto->getModelo()); ?></td>
+                                        <td><?= htmlspecialchars($auto->getDniDuenio()); ?></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mt-3 text-center">
+                            <a href="../BuscarAuto.php" class="btn btn-personalizado w-100">Volver</a>
+                        </div>
+                    </div>
+                </div>
+        <?php 
+            } 
+        ?>
     </div>
 </body>
 </html>

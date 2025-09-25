@@ -18,9 +18,9 @@
                             include_once __DIR__ . "/../../includes/formData.php";
                             include_once __DIR__ . "/../../includes/load.php";
 
-                            $datosPersona = datosEnviados();
-                            $controlPersona = new ControladorPersona();
-                            $altaValida = $controlPersona->darAlta($datosPersona);
+                            $datosPersona = datosEnviados ();
+                            $controlPersona = new ControladorPersona ();
+                            $altaValida = $controlPersona -> darAlta ($datosPersona);
 
                             if ($altaValida) {
                                 echo '<p class="text-success fw-bold">La persona se dio de alta correctamente</p>';

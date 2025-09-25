@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="CSS/styles.css">
     <title>Buscar Persona</title>
 </head>
-<body class="bg-dark text-light">
+<body>
     <div class="container my-4">
         <h1 class="mb-4 text-center titulo-personalizado">Buscar Persona</h1>
         <div class="row justify-content-center">

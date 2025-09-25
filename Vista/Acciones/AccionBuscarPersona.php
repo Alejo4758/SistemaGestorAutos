@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Persona</title>
 </head>
-<body class="bg-dark text-light">
+<body>
     <div class="container my-4">
         <h1 class="mb-4 text-center titulo-personalizado">Resultado de búsqueda</h1>
 

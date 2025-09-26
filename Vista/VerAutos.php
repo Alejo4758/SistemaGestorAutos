@@ -45,6 +45,16 @@
                 echo '</div>';
             }
         ?>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card card-personalizada shadow-sm">
+                    <div class="card-body text-center">
+                        <a href="Inicio/index.php" class="btn btn-personalizado w-100">Volver al menú</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

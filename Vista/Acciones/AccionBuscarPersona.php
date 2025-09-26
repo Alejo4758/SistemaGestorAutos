@@ -25,7 +25,7 @@
                         <div class="card card-personalizada shadow-sm">
                             <div class="card-body text-center">
                                 <p class="text-danger fw-bold mb-3">No hay una persona con ese DNI</p>
-                                <a href="../BuscarPersona.php" class="btn btn-personalizado w-100">Volver</a>
+                                <a href="../Inicio/index.php" class="btn btn-personalizado w-100">Volver al menú</a>
                             </div>
                         </div>
                     </div>

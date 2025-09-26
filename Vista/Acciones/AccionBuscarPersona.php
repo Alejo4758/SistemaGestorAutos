@@ -12,12 +12,12 @@
         <h1 class="mb-4 text-center titulo-personalizado">Resultado de búsqueda</h1>
 
         <?php
-            include_once __DIR__ . "/../../includes/formData.php";
             include_once __DIR__ . "/../../includes/load.php";
+            include_once __DIR__ . "/../../includes/formData.php";
 
             $datos = datosEnviados ();
             $controlPersona = new ControladorPersona ();
-            $persona = $controlPersona -> buscar ($datos["dni"]);
+            $persona = $controlPersona -> buscar ($datos["nroDni"]);
             if (!$persona) {
         ?>
                 <div class="row justify-content-center">
@@ -25,7 +25,7 @@
                         <div class="card card-personalizada shadow-sm">
                             <div class="card-body text-center">
                                 <p class="text-danger fw-bold mb-3">No hay una persona con ese DNI</p>
-                                <a href="../AutosPersona.php" class="btn btn-personalizado w-100">Volver</a>
+                                <a href="../BuscarPersona.php" class="btn btn-personalizado w-100">Volver</a>
                             </div>
                         </div>
                     </div>
@@ -34,94 +34,46 @@
             }
             else {
         ?>
-                <div class="card card-personalizada shadow-sm mb-4">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-dark table-striped table-bordered mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>DNI</th>
-                                        <th>Apellido</th>
-                                        <th>Nombre</th>
-                                        <th>Fecha de nacimiento</th>
-                                        <th>Teléfono</th>
-                                        <th>Domicilio</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><?= htmlspecialchars ($persona -> getNroDni ()); ?></td>
-                                        <td><?= htmlspecialchars ($persona -> getApellido ()); ?></td>
-                                        <td><?= htmlspecialchars ($persona -> getNombre ()); ?></td>
-                                        <td><?= htmlspecialchars ($persona -> getFechaNac ()); ?></td>
-                                        <td><?= htmlspecialchars ($persona -> getTelefono ()); ?></td>
-                                        <td><?= htmlspecialchars ($persona -> getDomicilio ()); ?></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card card-personalizada shadow-sm">
+                            <div class="card-body">
+                                <form action="../ActualizarDatosPersona.php" method="post" class="needs-validation" novalidate>
+                                    <div class="mb-3">
+                                        <label for="apellido" class="form-label">Apellido</label>
+                                        <input type="text" name="apellido" id="apellido" class="form-control" value="<?= htmlspecialchars ($persona -> getApellido ()) ?>" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+(?:\s[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+)*$" required>
+                                        <div class="invalid-feedback">Ingrese un apellido válido</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="nombre" class="form-label">Nombre</label>
+                                        <input type="text" name="nombre" id="nombre" class="form-control" value="<?= htmlspecialchars ($persona -> getNombre ()) ?>" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+(?:\s[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+)*$" required>
+                                        <div class="invalid-feedback">Ingrese un nombre válido</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="fechaNac" class="form-label">Fecha de nacimiento</label>
+                                        <input type="date" name="fechaNac" id="fechaNac" class="form-control" value="<?= htmlspecialchars ($persona -> getFechaNac ()) ?>" required>
+                                        <div class="invalid-feedback">Ingrese una fecha válida</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="telefono" class="form-label">Teléfono</label>
+                                        <input type="text" name="telefono" id="telefono" class="form-control" value="<?= htmlspecialchars ($persona -> getTelefono ()) ?>" pattern="^[0-9]{2,4}[-\s]?[0-9]{6,8}$" required>
+                                        <div class="invalid-feedback">Ingrese un teléfono válido</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="domicilio" class="form-label">Domicilio</label>
+                                        <input type="text" name="domicilio" id="domicilio" class="form-control" value="<?= htmlspecialchars ($persona -> getDomicilio ()) ?>" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñÜü0-9\s\.\,\-\/#ºª]+$" required>
+                                        <div class="invalid-feedback">Ingrese un domicilio válido</div>
+                                    </div>
+                                    <button type="submit" class="btn btn-personalizado w-100">Actualizar</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <?php
-                    $controlAuto = new ControladorAuto ();
-                    $listaAutos = $controlAuto -> listar ();
-                    $autosPersona = [];
-                    foreach ($listaAutos as $auto) {
-                        if ($persona -> getNroDni () === $auto -> getDniDuenio ()) {
-                            $autosPersona[] = $auto;
-                        }
-                    }
-                    if (count($autosPersona) === 0) {
-                ?>
-                        <div class="row justify-content-center">
-                            <div class="col-md-6">
-                                <div class="card-body text-center">
-                                    <p class="text-danger fw-bold mb-3">Esta persona no tiene autos registrados</p>
-                                </div>
-                            </div>
-                        </div>
-                <?php 
-                    }
-                    else {
-                ?>
-                        <h2 class="mt-5 mb-4 text-center titulo-personalizado">Autos del titular</h2>
-                            <div class="card card-personalizada shadow-sm mb-4">
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-dark table-striped table-bordered mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th>Patente</th>
-                                                    <th>Marca</th>
-                                                    <th>Modelo</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php 
-                                                    foreach ($autosPersona as $auto) { 
-                                                ?>
-                                                <tr>
-                                                    <td><?= htmlspecialchars ($auto -> getPatente ()); ?></td>
-                                                    <td><?= htmlspecialchars ($auto -> getMarca ()); ?></td>
-                                                    <td><?= htmlspecialchars ($auto -> getModelo ()); ?></td>
-                                                </tr>
-                                                <?php
-                                                    }
-                                                ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                <?php 
-                    }
-                ?>
-                <div class="mt-3 text-center">
-                    <a href="../AutosPersona.php" class="btn btn-personalizado w-100">Volver</a>
-                </div>
-            <?php
-                }
-            ?>
+        <?php
+            }
+        ?>
     </div>
+    <script src="../JS/Validacion.js"></script>
 </body>
 </html>

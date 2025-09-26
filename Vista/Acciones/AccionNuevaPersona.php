@@ -29,7 +29,7 @@
                                 echo '<p class="text-danger fw-bold">La persona ya se encuentra cargada en el sistema</p>';
                             }
                         ?>
-                        <a href="../NuevaPersona.php" class="btn btn-personalizado mt-3 w-100">Volver</a>
+                        <a href="../Inicio/index.php" class="btn btn-personalizado mt-3 w-100">Volver al menú</a>
                     </div>
                 </div>
             </div>

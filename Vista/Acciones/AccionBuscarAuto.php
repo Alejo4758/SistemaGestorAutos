@@ -26,7 +26,7 @@
                         <div class="card card-personalizada shadow-sm">
                             <div class="card-body text-center">
                                 <p class="text-danger fw-bold mb-3">No hay un auto con esa patente</p>
-                                <a href="../BuscarAuto.php" class="btn btn-personalizado w-100">Volver</a>
+                                <a href="../Inicio/index.php" class="btn btn-personalizado w-100">Volver al menú</a>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                             </table>
                         </div>
                         <div class="mt-3 text-center">
-                            <a href="../BuscarAuto.php" class="btn btn-personalizado w-100">Volver</a>
+                            <a href="../Inicio/index.php" class="btn btn-personalizado w-100">Volver al menú</a>
                         </div>
                     </div>
                 </div>

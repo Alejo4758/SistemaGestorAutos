@@ -38,7 +38,7 @@
                                     echo '<p class="text-danger fw-bold">No es posible dar de alta el auto</p>';
                                 }
                         ?>
-                                <a href="../NuevoAuto.php" class="btn btn-personalizado mt-3 w-100">Volver</a>
+                                <a href="../Inicio/index.php" class="btn btn-personalizado mt-3 w-100">Volver al menú</a>
                         <?php
                             }
                         ?>

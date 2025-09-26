@@ -39,6 +39,7 @@
                         <div class="card card-personalizada shadow-sm">
                             <div class="card-body">
                                 <form action="../ActualizarDatosPersona.php" method="post" class="needs-validation" novalidate>
+                                    <input type="hidden" class="form-control" name="nroDni" id="nroDni" value="<?= htmlspecialchars ($persona -> getNroDni ()) ?>">
                                     <div class="mb-3">
                                         <label for="apellido" class="form-label">Apellido</label>
                                         <input type="text" name="apellido" id="apellido" class="form-control" value="<?= htmlspecialchars ($persona -> getApellido ()) ?>" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+(?:\s[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+)*$" required>

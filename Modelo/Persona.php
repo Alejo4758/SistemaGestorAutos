@@ -121,7 +121,7 @@
                                  telefono = '{$this -> getTelefono ()}',
                                  domicilio = '{$this -> getDomicilio ()}'
                              WHERE nroDni = '{$this -> getNroDni ()}'";
-                if ($objDB -> Ejecutar ($consulta) !== 1) {
+                if ($objDB -> Ejecutar ($consulta)) {
                     $respuesta = true;
                 }
                 else {
